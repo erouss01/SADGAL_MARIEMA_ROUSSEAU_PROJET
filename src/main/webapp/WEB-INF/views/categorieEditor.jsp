@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-
 	<head>
 		<title>Edition des catégories</title>
 	</head>
@@ -10,19 +9,8 @@
 		<h1>Edition des catégories</h1>
 		
 		<form method="POST"> <%-- L'action par défaut est de revenir à l'URL du contrôleur --%>
-			<input name="libelle" placeholder="Libellé de la catégorie"><br>
-			<ul> <%-- On montre les erreurs de saisie éventuelles --%>
-				<c:forEach var="error" items="${validationErrors.getErrors('libelle')}">
-					<li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
-				</c:forEach>
-			</ul>
-			
+			<input name="libelle" placeholder="Libellé de la catégorie"><br>		
 			<input name="description" placeholder="Description de la catégorie"><br>
-			<ul> <%-- On montre les erreurs de saisie éventuelles --%>
-				<c:forEach var="error" items="${validationErrors.getErrors('description')}">
-					<li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
-				</c:forEach>
-			</ul>
 			<input type="submit" value="ajouter une nouvelle catégorie">
 		</form>
 		<%-- Est-ce qu'on a un message d'erreur à afficher ? --%>
